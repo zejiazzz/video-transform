@@ -13,6 +13,8 @@ import { ChainsModule } from './chains/chains.module';
 import { AgentsModule } from './agents/agents.module';
 import { ChainsService } from './chains/chains.service';
 import { AgentsService } from './agents/agents.service';
+import { MemoryModule } from './memory/memory.module';
+import { RagModule } from './rag/rag.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { AgentsService } from './agents/agents.service';
     PromptsModule,
     ChainsModule,
     AgentsModule,
+    MemoryModule,
+    RagModule,
   ],
   controllers: [AppController],
   providers: [
