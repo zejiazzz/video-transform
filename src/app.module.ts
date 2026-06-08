@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OrderModule } from './order/order.module';
@@ -13,9 +14,13 @@ import { ChainsModule } from './chains/chains.module';
 import { AgentsModule } from './agents/agents.module';
 import { ChainsService } from './chains/chains.service';
 import { AgentsService } from './agents/agents.service';
+import { MemoryModule } from './memory/memory.module';
+import { RagModule } from './rag/rag.module';
+import { FunctionCallingModule } from './function-calling/function-calling.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     UserModule,
     OrderModule,
     PrismaModule,
@@ -24,6 +29,9 @@ import { AgentsService } from './agents/agents.service';
     PromptsModule,
     ChainsModule,
     AgentsModule,
+    MemoryModule,
+    RagModule,
+    FunctionCallingModule,
   ],
   controllers: [AppController],
   providers: [
