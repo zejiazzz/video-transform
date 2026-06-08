@@ -43,7 +43,7 @@ services:
     restart: always
     # 从 .env.production 文件读取环境变量
     env_file:
-      - .env.production
+      - .env
     # 端口映射：宿主机端口:容器端口
     # 宿主机 9001  → 容器 9001（可以直接用 IP:9001 访问，测试用）
     ports:

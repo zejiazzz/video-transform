@@ -67,4 +67,4 @@ EXPOSE 9001
 
 # 启动命令：运行编译后的入口文件
 # 注意：生产环境运行 dist/main.js，不是 ts-node src/main.ts
-CMD ["node", "dist/main.js"]
+CMD ["node", "dist/src/main.js"]
