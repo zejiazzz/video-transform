@@ -1,7 +1,7 @@
 // src/rag/rag.controller.ts
 
 import { Controller, Post, Get, Delete, Body } from '@nestjs/common';
-import { RagService } from './rag.service';
+import { RagService, type RagSearchResponse } from './rag.service';
 
 @Controller('rag')
 export class RagController {
@@ -18,7 +18,9 @@ export class RagController {
   }
 
   @Post('search')
-  search(@Body() body: { query: string; topK?: number }) {
+  search(
+    @Body() body: { query: string; topK?: number },
+  ): Promise<RagSearchResponse> {
     return this.ragService.search(body.query, body.topK);
   }
 
